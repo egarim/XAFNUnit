@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XAFNUnit.Module.Win", "XAFN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XAFNUnit.Win", "XAFNUnit.Win\XAFNUnit.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{AE08F6FA-CAAF-4B69-8083-2845D3CD599E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{AE08F6FA-CAAF-4B69-8083-2845D3CD599E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
