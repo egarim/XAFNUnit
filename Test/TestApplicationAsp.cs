@@ -8,10 +8,10 @@ namespace Test
 {
     public class TestApplicationAsp : WebApplication
     {
-        protected override LayoutManager CreateLayoutManagerCore(bool simple)
-        {
-            return null;
-        }
+        //protected override LayoutManager CreateLayoutManagerCore(bool simple)
+        //{
+        //    return null;
+        //}
 
         public TestApplicationAsp()
         {

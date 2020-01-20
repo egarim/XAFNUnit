@@ -8,10 +8,10 @@ namespace Test
 {
     public class TestApplicationWin : WinApplication
     {
-        protected override LayoutManager CreateLayoutManagerCore(bool simple)
-        {
-            return null;
-        }
+        //protected override LayoutManager CreateLayoutManagerCore(bool simple)
+        //{
+        //    return null;
+        //}
 
         public TestApplicationWin()
         {
@@ -23,7 +23,7 @@ namespace Test
             e.Updater.Update();
             e.Handled = true;
         }
-      \
+     
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args)
         {
             //HACK in case we need the security system

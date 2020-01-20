@@ -31,18 +31,18 @@ namespace Test.SampleModuleTest
         }
 
         [Test]
-        public void When_ListViewCreated_Expect_ActionOnlyEnableOnDetailViewShouldBeInactive_Asp()
+        public void When_ListViewCreated_Expect_ActionOnlyEnableOnDetailViewShouldBeActive_Asp()
         {
             var Controller = this.SetupListViewForController<SampleViewController, SampleDomainObject>(this.AspApp, true);
            
-            Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, false);
+            Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, true);
         }
         [Test]
-        public void When_ListViewCreated_Expect_ActionOnlyEnableOnDetailViewShouldBeActive_Win()
+        public void When_ListViewCreated_Expect_ActionOnlyEnableOnDetailViewShouldBeInactive_Asp()
         {
-            var Controller = this.SetupDetailViewControllerForNewObject<SampleViewController, SampleDomainObject>(this.WinApp, true);
+            var Controller = this.SetupDetailViewControllerForNewObject<SampleViewController, SampleDomainObject>(this.AspApp, true);
 
-            Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, true);
+            Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, false);
         }
         [Test]
         public void When_Create10RecordsDoExecute_Expect_ResultCountIs10_Win()

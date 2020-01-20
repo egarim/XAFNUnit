@@ -21,7 +21,7 @@ namespace Test
 
 
             actionOnlyEnableOnDetailView = new SimpleAction(this, "ActionOnlyEnableOnDetailView", "View", new SimpleActionExecuteEventHandler(DoNothing));
-            actionOnlyEnableOnDetailView.TargetViewType = ViewType.DetailView;
+            actionOnlyEnableOnDetailView.TargetViewType = ViewType.ListView;
         }
 
         private void DoNothing(object sender, SimpleActionExecuteEventArgs e)
@@ -31,7 +31,7 @@ namespace Test
 
         private void Create10RecordsExecute(object sender, SimpleActionExecuteEventArgs e)
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i <= 9; i++)
             {
                 this.ObjectSpace.CreateObject<SampleDomainObject>().Number = i;
             }

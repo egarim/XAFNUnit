@@ -1,0 +1,16 @@
+﻿General Rules
+
+1) make sure you are only testing the code that you created (beware of start confusing testing your code with testing the framework,BTW the framework is already tested)
+2) Create your code in a way that facilitates unit testing
+3) Create the test scenarios based on how you apply any Xaf functionality to your business problem as the following examples
+   -Check the an editor to see if a visual rule is applied 
+   -Check the state of an action on certain detail view or list view
+   -Execute actions that handle data and then check if the data is on the correct state
+
+
+
+Possible testing scenarios
+
+A) Create a view with one of the following methods
+-SetupListViewForController
+-SetupDetailViewControllerForNewObject
