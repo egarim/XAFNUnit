@@ -1,4 +1,5 @@
 ﻿using DevExpress.ExpressApp.ConditionalAppearance;
+using DevExpress.ExpressApp.Editors;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using System;
@@ -13,6 +14,9 @@ namespace Test
     [Appearance("RedColor", AppearanceItemType = "ViewItem", TargetItems = "*",
     Criteria = "Number>5", Context = "DetailView", BackColor = "Red",
         FontColor = "Maroon", Priority = 2)]
+
+    [Appearance("Hide Delete Action", AppearanceItemType = "Action", TargetItems = "Delete", Context = "Any", Visibility = ViewItemVisibility.ShowEmptySpace, Criteria = "Number>100")]
+
     public class SampleDomainObject:BaseObject
     {
         /// <summary>

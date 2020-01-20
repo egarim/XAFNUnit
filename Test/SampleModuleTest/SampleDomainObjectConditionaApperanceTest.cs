@@ -42,7 +42,15 @@ namespace Test.SampleModuleTest
             Instance.Number = 4;
             Assert.AreEqual(this.EvaluateApperanceRuleForDetailView(this.AspApp, Instance, os, "RedColor"), false);
         }
+        [Test]
+        public void When_SampleDomainObjectNumberLessThan5_Expect_RuleToBeApplied_Wina()
+        {
 
+            var os = this.AspApp.CreateObjectSpace();
+            var Instance = os.CreateObject<SampleDomainObject>();
+            Instance.Number = 150;
+            Assert.AreEqual(this.EvaluateApperanceRuleForDetailView(this.AspApp, Instance, os, "Hide Delete Action"), true);
+        }
 
     }
 }
