@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Web.SystemModule;
 using DevExpress.ExpressApp.Win.SystemModule;
+using DevExpress.ExpressApp.ConditionalAppearance;
+using Test.Fakes;
 
 namespace Test
 {
@@ -59,9 +61,9 @@ namespace Test
         {
             List<ModuleBase> Modules = new List<ModuleBase>();
             SampleModule MainDemoModule = new SampleModule();
-
+            var Apperance = new ConditionalAppearanceModule();
             Modules.Add(MainDemoModule);
-
+            Modules.Add(Apperance);
             if (AdditionalExportedTypes == null)
                 return Modules;
 
@@ -119,6 +121,24 @@ namespace Test
             frame.RegisterController(controller);
             return controller;
         }
+
+
+        protected virtual bool EvaluateApperanceRuleForDetailView(XafApplication App, object ObjectInstance, IObjectSpace OwnerObjectSpace, string RuleName, AppearanceItemType ItemType= AppearanceItemType.ViewItem) 
+        {
+            AppearanceController controller = new AppearanceController();
+            var View = App.CreateDetailView(OwnerObjectSpace, ObjectInstance, true);
+            //Frame frame = App.CreateFrame(TemplateContext.ApplicationWindow);
+            //frame.SetView(View);
+            //frame.RegisterController(controller);
+            var target = new FakeAppearanceTarget();
+            controller.RefreshItemAppearance(View, "ViewItem", RuleName, target, ObjectInstance);
+            return target.RuleApplied;
+           
+
+        }
+
+
+
 
         /// <summary>
         /// Execute the setup process for a Xaf application

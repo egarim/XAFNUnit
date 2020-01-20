@@ -13,6 +13,7 @@
     <PackageReference Include="DevExpress.ExpressApp.Win" Version="$(DevExpressVersion)" />
     <PackageReference Include="DevExpress.ExpressApp.Web" Version="$(DevExpressVersion)" />
     <PackageReference Include="DevExpress.ExpressApp.Core.All" Version="$(DevExpressVersion)" />
+
   </ItemGroup>
 
   
