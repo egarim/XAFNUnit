@@ -13,12 +13,17 @@ namespace Test.Fakes
     {
         public FakeAppearanceTarget()
         {
+            this.FontColor = Color.Black;
+            this.BackColor = Color.Transparent;
+            this.FontStyle = FontStyle.Regular;
             PropertyChanged += FakeAppearanceTarget_PropertyChanged;
         }
 
         private void FakeAppearanceTarget_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
            
+
+
             if (e.PropertyName==nameof(IAppearanceFormat.BackColor) || e.PropertyName == nameof(IAppearanceFormat.FontColor) || e.PropertyName == nameof(IAppearanceFormat.FontStyle))
             {
                 IAppearanceFormatApplied = true;

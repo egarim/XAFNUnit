@@ -9,7 +9,7 @@ namespace Test.SampleModuleTest
 {
  
     [TestFixture]
-    public class SampleDomainObjectTest : TestBase
+    public class SampleDomainObjectConditionaApperanceTest : TestBase
     {
 
         [SetUp]
@@ -33,7 +33,15 @@ namespace Test.SampleModuleTest
         }
 
 
-   
+        [Test]
+        public void When_SampleDomainObjectNumberLessThan5_Expect_RuleToBeApplied_Win()
+        {
+
+            var os = this.AspApp.CreateObjectSpace();
+            var Instance = os.CreateObject<SampleDomainObject>();
+            Instance.Number = 4;
+            Assert.AreEqual(this.EvaluateApperanceRuleForDetailView(this.AspApp, Instance, os, "RedColor"), false);
+        }
 
 
     }
