@@ -44,6 +44,26 @@ namespace Test.SampleModuleTest
 
             Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, false);
         }
+
+        [Test]
+        public void When_ListViewCreated_Expect_ActionOnlyEnableOnDetailViewShouldBeInactive_AspNew()
+        {
+
+            var os = this.AspApp.CreateObjectSpace();
+            var Instance=os.CreateObject<SampleDomainObject>();
+            Instance.Number = 7;
+            var Controller = this.SetupDetailViewControllerForExistingObject<SampleViewController>(this.AspApp, Instance, os);
+
+            DetailView detailView = (Controller.View as DetailView);
+            var Items = detailView.Items;
+            var ViewItem= detailView.FindItem("Number");
+          
+            var Control= ViewItem.Control;
+
+            Assert.AreEqual(Controller.ActionOnlyEnableOnDetailView.Active.ResultValue, false);
+        }
+
+
         [Test]
         public void When_Create10RecordsDoExecute_Expect_ResultCountIs10_Win()
         {

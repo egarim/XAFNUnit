@@ -1,4 +1,5 @@
-﻿using DevExpress.Persistent.BaseImpl;
+﻿using DevExpress.ExpressApp.ConditionalAppearance;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace Test
 {
+
+    [Appearance("RedColor", AppearanceItemType = "ViewItem", TargetItems = "*",
+    Criteria = "Number>5", Context = "DetailView", BackColor = "Red",
+        FontColor = "Maroon", Priority = 2)]
     public class SampleDomainObject:BaseObject
     {
         /// <summary>

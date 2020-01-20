@@ -110,10 +110,10 @@ namespace Test
         /// <param name="App">A decendent of a XAF application, this can be your own application or the provided TestApplicationAsp or TestApplicationWin</param>
         /// <param name="ObjectInstance">An instance of the persistent object you want to display on the detail view</param>
         /// <returns></returns>
-        protected virtual T SetupDetailViewControllerForExistingObject<T>(XafApplication App, object ObjectInstance) where T : ViewController
+        protected virtual T SetupDetailViewControllerForExistingObject<T>(XafApplication App, object ObjectInstance,IObjectSpace OwnerObjectSpace) where T : ViewController
         {
             var controller = (T)Activator.CreateInstance(typeof(T));
-            var View = App.CreateDetailView(ObjectInstance, true);
+            var View = App.CreateDetailView(OwnerObjectSpace,ObjectInstance, true);
             Frame frame = App.CreateFrame(TemplateContext.ApplicationWindow);
             frame.SetView(View);
             frame.RegisterController(controller);
